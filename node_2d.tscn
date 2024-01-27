@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://w0i2lickyadg"]
+[gd_scene load_steps=11 format=3 uid="uid://w0i2lickyadg"]
 
-[ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
+[ext_resource type="Texture2D" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
 [ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="3_4oel2"]
+[ext_resource type="Script" path="res://StreetFight.gd" id="3_88oer"]
+[ext_resource type="Texture2D" uid="uid://bcatgalf5gpv3" path="res://Art Assets/Gaca/Finished Sprites/Sheared_Snow_Golem_JE2_BE2.png" id="4_kjuho"]
 [ext_resource type="Script" path="res://DrivingScripts/Car1.gd" id="4_wcgun"]
 [ext_resource type="Script" path="res://DrivingScripts/Car2.gd" id="5_27hkm"]
 [ext_resource type="Script" path="res://DrivingScripts/Car3.gd" id="6_0kjcc"]
@@ -24,6 +26,17 @@ position = Vector2(267, 363)
 
 [node name="Street Fight" type="Node2D" parent="."]
 position = Vector2(267, 363)
+script = ExtResource("3_88oer")
+
+[node name="Player" type="Sprite2D" parent="Street Fight"]
+position = Vector2(134, 304)
+scale = Vector2(0.479947, 0.479947)
+texture = ExtResource("4_kjuho")
+
+[node name="Opponent" type="Sprite2D" parent="Street Fight"]
+position = Vector2(129, 33.25)
+scale = Vector2(1.46094, 1.02734)
+texture = ExtResource("3_4oel2")
 
 [node name="T-rex" type="Node2D" parent="."]
 

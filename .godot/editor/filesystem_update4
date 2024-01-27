@@ -1,5 +1,3 @@
 res://node_2d.tscn
-res://DrivingScripts/Car1.gd
-res://DrivingScripts/Car2.gd
-res://DrivingScripts/Car3.gd
-res://DrivingScripts/CharacterCar.gd
+res://Street Fight.gd
+res://StreetFight.gd
