@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://w0i2lickyadg"]
+[gd_scene load_steps=12 format=3 uid="uid://w0i2lickyadg"]
 
 [ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
 [ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="3_4oel2"]
+[ext_resource type="PackedScene" uid="uid://cnisfvjnccq4o" path="res://platformer.tscn" id="3_5ujss"]
 [ext_resource type="Script" path="res://StreetFight.gd" id="3_88oer"]
 [ext_resource type="Texture2D" uid="uid://bcatgalf5gpv3" path="res://Art Assets/Gaca/Finished Sprites/Sheared_Snow_Golem_JE2_BE2.png" id="4_kjuho"]
 [ext_resource type="Script" path="res://DrivingScripts/Car1.gd" id="4_wcgun"]
@@ -23,6 +24,9 @@ script = ExtResource("2_kiy3f")
 
 [node name="Platformer" type="Node2D" parent="."]
 position = Vector2(267, 363)
+
+[node name="Node2D" parent="Platformer" instance=ExtResource("3_5ujss")]
+position = Vector2(126, -125)
 
 [node name="Street Fight" type="Node2D" parent="."]
 position = Vector2(267, 363)
