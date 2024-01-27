@@ -1,4 +1,4 @@
-res://platformer.tscn
 res://node_2d.tscn
-res://script1.gd
 res://StreetFight.gd
+res://platformer.tscn
+res://script1.gd
