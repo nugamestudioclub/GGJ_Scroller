@@ -35,3 +35,7 @@ func punch_routine():
 	await get_tree().create_timer(1).timeout
 	opponent.position.y += 50
 	punch_routine()
+
+
+func _on_phone_scroll(type):
+	pass # Replace with function body.
