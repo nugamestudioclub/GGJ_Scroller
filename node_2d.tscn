@@ -23,6 +23,7 @@ texture = ExtResource("1_dfiyt")
 script = ExtResource("2_kiy3f")
 
 [node name="Platformer" type="Node2D" parent="."]
+visible = false
 position = Vector2(267, 363)
 
 [node name="Node2D" parent="Platformer" instance=ExtResource("3_5ujss")]
@@ -41,6 +42,13 @@ texture = ExtResource("4_kjuho")
 position = Vector2(129, 33.25)
 scale = Vector2(1.46094, 1.02734)
 texture = ExtResource("3_4oel2")
+
+[node name="EnemyHealth" type="ProgressBar" parent="Street Fight"]
+offset_left = 16.0
+offset_top = -75.0
+offset_right = 237.0
+offset_bottom = -48.0
+value = 100.0
 
 [node name="T-rex" type="Node2D" parent="."]
 
