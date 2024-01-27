@@ -6,8 +6,8 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Phone" type="Sprite2D" parent="."]
-position = Vector2(267, 363)
-scale = Vector2(1.29509, 1)
+position = Vector2(560, 325)
+scale = Vector2(2.91516, 4.40554)
 texture = ExtResource("1_kiffw")
 script = ExtResource("2_kiy3f")
 
