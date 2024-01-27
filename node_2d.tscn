@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://w0i2lickyadg"]
 
-[ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="1_kiffw"]
+[ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Phone" type="Sprite2D" parent="."]
-position = Vector2(393, 399)
-scale = Vector2(2.91516, 4.40554)
-texture = ExtResource("1_kiffw")
+position = Vector2(400, 400)
+texture = ExtResource("1_dfiyt")
 script = ExtResource("2_kiy3f")
 
 [node name="Platformer" type="Node2D" parent="."]
