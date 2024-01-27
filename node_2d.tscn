@@ -5,7 +5,17 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Test Sprite" type="Sprite2D" parent="."]
 position = Vector2(267, 363)
 texture = ExtResource("1_kiffw")
 script = ExtResource("2_kiy3f")
+
+[node name="Platformer" type="Node2D" parent="."]
+position = Vector2(267, 363)
+
+[node name="Street Fight" type="Node2D" parent="."]
+position = Vector2(267, 363)
+
+[node name="T-rex" type="Node2D" parent="."]
+
+[node name="Driving" type="Node2D" parent="."]

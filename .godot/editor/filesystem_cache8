@@ -1,5 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706318730
+::res://::1706318792
 icon.svg::CompressedTexture2D::7898763800585942779::1706315742::1706317101::1::::<><>::
 node_2d.tscn::PackedScene::1596298546486235276::1706318584::0::1::::<><>::uid://dkshqrs1mppjv::::res://icon.svg<>res://script1.gd
 script1.gd::GDScript::-1::1706318584::0::1::::<>Sprite2D<>::
+::res://Art Assets/::1706318792
+::res://Art Assets/Gaca/::1706318792
+::res://Art Assets/Gaca/Finished Sprites/::1706318792
+Sheared_Snow_Golem_JE2_BE2.png::CompressedTexture2D::2527962725855527698::1706318792::1706318800::1::::<><>::

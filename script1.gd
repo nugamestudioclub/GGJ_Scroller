@@ -11,5 +11,4 @@ func _process(delta):
 	position.x+=1;
 	position.y+=1;
 	pass
-	if Input.action_press("up_arrow") {};
 	
