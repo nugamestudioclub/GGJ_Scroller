@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://w0i2lickyadg"]
 
-[ext_resource type="Texture2D" path="res://PhoneOutline.png" id="1_dfiyt"]
+[ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
 [ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="3_4oel2"]
 [ext_resource type="Script" path="res://StreetFight.gd" id="3_88oer"]
