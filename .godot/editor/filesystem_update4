@@ -1,1 +1,7 @@
 res://node_2d.tscn
+<<<<<<< HEAD
+res://DrivingScripts/Car.gd
+res://DrivingScripts/CharacterCar.gd
+=======
+res://Platformer.gd
+>>>>>>> ccdb6a83a9369a9c8670fb92b49a63d878698a7b

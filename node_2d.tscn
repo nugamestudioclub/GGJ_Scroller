@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://w0i2lickyadg"]
+[gd_scene load_steps=7 format=3 uid="uid://w0i2lickyadg"]
 
 [ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
+[ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="1_kiffw"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="3_4nbat"]
+[ext_resource type="Script" path="res://DrivingScripts/Car.gd" id="3_tnu62"]
+[ext_resource type="Script" path="res://DrivingScripts/CharacterCar.gd" id="5_jxr5v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xt1se"]
+radius = 4.69417
+height = 11.5188
+=======
+[ext_resource type="Script" path="res://Platformer.gd" id="3_66ieb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqcpe"]
+radius = 29.0
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkyvq"]
+size = Vector2(401, 98.5)
+>>>>>>> ccdb6a83a9369a9c8670fb92b49a63d878698a7b
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,9 +32,77 @@ script = ExtResource("2_kiy3f")
 [node name="Platformer" type="Node2D" parent="."]
 position = Vector2(267, 363)
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Platformer"]
+position = Vector2(58, 89)
+script = ExtResource("3_66ieb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platformer/CharacterBody2D"]
+position = Vector2(40.75, -18)
+scale = Vector2(0.441406, 0.53125)
+texture = ExtResource("1_kiffw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platformer/CharacterBody2D"]
+position = Vector2(41, -18)
+shape = SubResource("CapsuleShape2D_sqcpe")
+
+[node name="Maps" type="Node2D" parent="Platformer"]
+
+[node name="Map1" type="Area2D" parent="Platformer/Maps"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platformer/Maps/Map1"]
+position = Vector2(132.5, 336.25)
+shape = SubResource("RectangleShape2D_wkyvq")
+
 [node name="Street Fight" type="Node2D" parent="."]
 position = Vector2(267, 363)
 
 [node name="T-rex" type="Node2D" parent="."]
 
 [node name="Driving" type="Node2D" parent="."]
+visible = false
+position = Vector2(-149, 170)
+
+[node name="Car1" type="Sprite2D" parent="Driving"]
+z_index = -1
+position = Vector2(400, 200)
+texture = ExtResource("3_4nbat")
+script = ExtResource("3_tnu62")
+carSpeed = 200
+
+[node name="CarCollision" type="CollisionShape2D" parent="Driving/Car1"]
+scale = Vector2(7.03, 12.154)
+shape = SubResource("CapsuleShape2D_xt1se")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Driving/Car1"]
+
+[node name="Car2" type="Sprite2D" parent="Driving"]
+z_index = -1
+position = Vector2(550, 200)
+texture = ExtResource("3_4nbat")
+script = ExtResource("3_tnu62")
+carSpeed = 200
+
+[node name="CarCollision" type="CollisionShape2D" parent="Driving/Car2"]
+scale = Vector2(7.03, 12.154)
+shape = SubResource("CapsuleShape2D_xt1se")
+
+[node name="Car3" type="Sprite2D" parent="Driving"]
+z_index = -1
+position = Vector2(700, 200)
+texture = ExtResource("3_4nbat")
+script = ExtResource("3_tnu62")
+carSpeed = 200
+
+[node name="CarCollision" type="CollisionShape2D" parent="Driving/Car3"]
+scale = Vector2(7.03, 12.154)
+shape = SubResource("CapsuleShape2D_xt1se")
+
+[node name="CharacterCar" type="Sprite2D" parent="Driving"]
+position = Vector2(400, 500)
+texture = ExtResource("3_4nbat")
+script = ExtResource("5_jxr5v")
+characterCarSpeed = 400
+
+[node name="CharacterCarCollision" type="CollisionShape2D" parent="Driving/CharacterCar"]
+scale = Vector2(7.03, 12.154)
+shape = SubResource("CapsuleShape2D_xt1se")
