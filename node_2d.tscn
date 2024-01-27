@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://w0i2lickyadg"]
+[gd_scene load_steps=9 format=3 uid="uid://w0i2lickyadg"]
 
 [ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
+[ext_resource type="Texture2D" uid="uid://dkshqrs1mppjv" path="res://icon.svg" id="3_4oel2"]
+[ext_resource type="Script" path="res://DrivingScripts/Car1.gd" id="4_wcgun"]
+[ext_resource type="Script" path="res://DrivingScripts/Car2.gd" id="5_27hkm"]
+[ext_resource type="Script" path="res://DrivingScripts/Car3.gd" id="6_0kjcc"]
+[ext_resource type="Script" path="res://DrivingScripts/CharacterCar.gd" id="7_th561"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ki4en"]
+radius = 78.0
+height = 624.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,3 +28,48 @@ position = Vector2(267, 363)
 [node name="T-rex" type="Node2D" parent="."]
 
 [node name="Driving" type="Node2D" parent="."]
+visible = false
+
+[node name="Car1" type="Sprite2D" parent="Driving"]
+position = Vector2(275, 350)
+scale = Vector2(0.5, 0.594)
+texture = ExtResource("3_4oel2")
+script = ExtResource("4_wcgun")
+carSpeed = 300
+
+[node name="CarCollision" type="CollisionShape2D" parent="Driving/Car1"]
+scale = Vector2(1, 0.435318)
+shape = SubResource("CapsuleShape2D_ki4en")
+
+[node name="Car2" type="Sprite2D" parent="Driving"]
+position = Vector2(525, 350)
+scale = Vector2(0.5, 0.594)
+texture = ExtResource("3_4oel2")
+script = ExtResource("5_27hkm")
+carSpeed = 300
+
+[node name="CarCollision" type="CollisionShape2D" parent="Driving/Car2"]
+scale = Vector2(1, 0.435318)
+shape = SubResource("CapsuleShape2D_ki4en")
+
+[node name="Car3" type="Sprite2D" parent="Driving"]
+position = Vector2(400, 350)
+scale = Vector2(0.5, 0.594)
+texture = ExtResource("3_4oel2")
+script = ExtResource("6_0kjcc")
+carSpeed = 300
+
+[node name="CarCollision" type="CollisionShape2D" parent="Driving/Car3"]
+scale = Vector2(1, 0.435318)
+shape = SubResource("CapsuleShape2D_ki4en")
+
+[node name="CharacterCar" type="Sprite2D" parent="Driving"]
+position = Vector2(550, 650)
+scale = Vector2(0.5, 0.594)
+texture = ExtResource("3_4oel2")
+script = ExtResource("7_th561")
+characterCarSpeed = 400
+
+[node name="CharacterCarCollision" type="CollisionShape2D" parent="Driving/CharacterCar"]
+scale = Vector2(1, 0.435318)
+shape = SubResource("CapsuleShape2D_ki4en")

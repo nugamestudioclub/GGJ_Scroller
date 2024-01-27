@@ -1,10 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706373299
-icon.svg::CompressedTexture2D::7898763800585942779::1706315742::1706317101::1::::<><>::
-node_2d.tscn::PackedScene::1596298546486235276::1706319983::0::1::::<><>::uid://dkshqrs1mppjv::::res://icon.svg<>res://script1.gd
-PhoneOutline.png::CompressedTexture2D::3827739790074483226::1706373299::1706373299::1::::<><>::
-script1.gd::GDScript::-1::1706319966::0::1::::<>Sprite2D<>::
-::res://Art Assets/::1706318792
-::res://Art Assets/Gaca/::1706318792
-::res://Art Assets/Gaca/Finished Sprites/::1706318800
-Sheared_Snow_Golem_JE2_BE2.png::CompressedTexture2D::2527962725855527698::1706318792::1706318800::1::::<><>::
+::res://::1706379135
+icon.svg::CompressedTexture2D::7898763800585942779::1706378080::1706378458::1::::<><>::
+node_2d.tscn::PackedScene::1596298546486235276::1706379011::0::1::::<><>::uid://busgkyi2e2h1s::::res://PhoneOutline.png<>res://script1.gd<>uid://dkshqrs1mppjv::::res://icon.svg
+PhoneOutline.png::CompressedTexture2D::3827739790074483226::1706378080::1706378080::1::::<><>::
+Car3.gd::GDScript::-1::1706379152::0::1::::<>Sprite2D<>::
+script1.gd::GDScript::-1::1706378080::0::1::::<>Sprite2D<>::
+::res://Art Assets/::1706378080
+::res://Art Assets/Gaca/::1706378080
+::res://Art Assets/Gaca/Finished Sprites/::1706378080
+Sheared_Snow_Golem_JE2_BE2.png::CompressedTexture2D::2527962725855527698::1706378080::1706378080::1::::<><>::
+::res://DrivingScripts/::1706379088
+Car1.gd::GDScript::-1::1706379044::0::1::::<>Sprite2D<>::
+Car2.gd::GDScript::-1::1706379086::0::1::::<><>::
