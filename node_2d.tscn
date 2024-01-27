@@ -5,8 +5,9 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Test Sprite" type="Sprite2D" parent="."]
+[node name="Phone" type="Sprite2D" parent="."]
 position = Vector2(267, 363)
+scale = Vector2(1.29509, 1)
 texture = ExtResource("1_kiffw")
 script = ExtResource("2_kiy3f")
 
