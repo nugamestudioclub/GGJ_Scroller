@@ -23,3 +23,7 @@ func _process(delta):
 	
 	
 	
+
+
+func _on_street_fight_done():
+	pass # Replace with function body.
