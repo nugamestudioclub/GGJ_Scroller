@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://w0i2lickyadg"]
+[gd_scene load_steps=11 format=3 uid="uid://w0i2lickyadg"]
 
 [ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
@@ -6,14 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://cnisfvjnccq4o" path="res://platformer.tscn" id="3_5ujss"]
 [ext_resource type="Script" path="res://StreetFight.gd" id="3_88oer"]
 [ext_resource type="Texture2D" uid="uid://bcatgalf5gpv3" path="res://Art Assets/Gaca/Finished Sprites/Sheared_Snow_Golem_JE2_BE2.png" id="4_kjuho"]
-[ext_resource type="Script" path="res://DrivingScripts/Car1.gd" id="4_wcgun"]
-[ext_resource type="Script" path="res://DrivingScripts/Car2.gd" id="5_27hkm"]
-[ext_resource type="Script" path="res://DrivingScripts/Car3.gd" id="6_0kjcc"]
 [ext_resource type="Script" path="res://DrivingScripts/CharacterCar.gd" id="7_th561"]
+[ext_resource type="Script" path="res://DrivingScripts/Driving.gd" id="7_yh63t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ki4en"]
 radius = 78.0
 height = 624.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv3kb"]
+size = Vector2(5.49161, 5.79287)
 
 [node name="Node2D" type="Node2D"]
 
@@ -30,6 +31,7 @@ position = Vector2(267, 363)
 position = Vector2(126, -125)
 
 [node name="Street Fight" type="Node2D" parent="."]
+visible = false
 position = Vector2(267, 363)
 script = ExtResource("3_88oer")
 is_game_running = true
@@ -63,42 +65,59 @@ value = 100.0
 show_percentage = false
 
 [node name="T-rex" type="Node2D" parent="."]
+visible = false
 
 [node name="Driving" type="Node2D" parent="."]
-visible = false
+script = ExtResource("7_yh63t")
+is_game_running = true
 
 [node name="Car1" type="Sprite2D" parent="Driving"]
 position = Vector2(275, 350)
 scale = Vector2(0.5, 0.594)
 texture = ExtResource("3_4oel2")
-script = ExtResource("4_wcgun")
-carSpeed = 300
 
 [node name="CarCollision" type="CollisionShape2D" parent="Driving/Car1"]
 scale = Vector2(1, 0.435318)
 shape = SubResource("CapsuleShape2D_ki4en")
 
+[node name="Area2D" type="Area2D" parent="Driving/Car1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Driving/Car1/Area2D"]
+position = Vector2(0, -0.841797)
+scale = Vector2(28.785, -48)
+shape = SubResource("RectangleShape2D_gv3kb")
+
 [node name="Car2" type="Sprite2D" parent="Driving"]
 position = Vector2(525, 350)
 scale = Vector2(0.5, 0.594)
 texture = ExtResource("3_4oel2")
-script = ExtResource("5_27hkm")
-carSpeed = 300
 
 [node name="CarCollision" type="CollisionShape2D" parent="Driving/Car2"]
 scale = Vector2(1, 0.435318)
 shape = SubResource("CapsuleShape2D_ki4en")
 
+[node name="Area2D" type="Area2D" parent="Driving/Car2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Driving/Car2/Area2D"]
+position = Vector2(0, -0.841797)
+scale = Vector2(28.785, -48)
+shape = SubResource("RectangleShape2D_gv3kb")
+
 [node name="Car3" type="Sprite2D" parent="Driving"]
 position = Vector2(400, 350)
 scale = Vector2(0.5, 0.594)
 texture = ExtResource("3_4oel2")
-script = ExtResource("6_0kjcc")
-carSpeed = 300
 
 [node name="CarCollision" type="CollisionShape2D" parent="Driving/Car3"]
 scale = Vector2(1, 0.435318)
 shape = SubResource("CapsuleShape2D_ki4en")
+
+[node name="Area2D" type="Area2D" parent="Driving/Car3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Driving/Car3/Area2D"]
+position = Vector2(0, -0.841797)
+scale = Vector2(28.785, -48)
+shape = SubResource("RectangleShape2D_gv3kb")
 
 [node name="CharacterCar" type="Sprite2D" parent="Driving"]
 position = Vector2(550, 650)
@@ -110,3 +129,15 @@ characterCarSpeed = 400
 [node name="CharacterCarCollision" type="CollisionShape2D" parent="Driving/CharacterCar"]
 scale = Vector2(1, 0.435318)
 shape = SubResource("CapsuleShape2D_ki4en")
+
+[node name="Area2D" type="Area2D" parent="Driving/CharacterCar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Driving/CharacterCar/Area2D"]
+position = Vector2(0, -0.841797)
+scale = Vector2(28.785, -48)
+shape = SubResource("RectangleShape2D_gv3kb")
+
+[connection signal="area_entered" from="Driving/Car1/Area2D" to="Driving" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Driving/Car2/Area2D" to="Driving" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Driving/Car3/Area2D" to="Driving" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Driving/CharacterCar/Area2D" to="Driving" method="_on_area_2d_area_entered"]
