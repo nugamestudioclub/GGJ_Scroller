@@ -1,5 +1,2 @@
 res://node_2d.tscn
-res://DrivingScripts/Driving.gd
 res://platformer.tscn
-res://DrivingScripts/Area2D.gd
-res://DrivingScripts/CharacterCar.gd
