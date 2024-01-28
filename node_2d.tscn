@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://w0i2lickyadg"]
+[gd_scene load_steps=15 format=3 uid="uid://w0i2lickyadg"]
 
 [ext_resource type="Texture2D" uid="uid://busgkyi2e2h1s" path="res://PhoneOutline.png" id="1_dfiyt"]
 [ext_resource type="Script" path="res://script1.gd" id="2_kiy3f"]
@@ -7,7 +7,32 @@
 [ext_resource type="Script" path="res://StreetFight.gd" id="3_88oer"]
 [ext_resource type="Texture2D" uid="uid://bcatgalf5gpv3" path="res://Art Assets/Gaca/Finished Sprites/Sheared_Snow_Golem_JE2_BE2.png" id="4_kjuho"]
 [ext_resource type="Script" path="res://DrivingScripts/CharacterCar.gd" id="7_th561"]
+[ext_resource type="Script" path="res://trex_game.gd" id="7_vsgek"]
 [ext_resource type="Script" path="res://DrivingScripts/Driving.gd" id="7_yh63t"]
+[ext_resource type="Texture2D" uid="uid://cbiohwkvq8wii" path="res://Art Assets/Temporary/small_temp.png" id="8_adbnm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dya41"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_adbnm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1ele"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ki4en"]
 radius = 78.0
@@ -34,7 +59,6 @@ position = Vector2(126, -125)
 visible = false
 position = Vector2(267, 363)
 script = ExtResource("3_88oer")
-is_game_running = true
 
 [node name="Player" type="Sprite2D" parent="Street Fight"]
 position = Vector2(134, 304)
@@ -65,9 +89,21 @@ value = 100.0
 show_percentage = false
 
 [node name="T-rex" type="Node2D" parent="."]
-visible = false
+script = ExtResource("7_vsgek")
+
+[node name="Anim" type="AnimatedSprite2D" parent="T-rex"]
+position = Vector2(250, 650)
+sprite_frames = SubResource("SpriteFrames_dya41")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="T-rex/Anim"]
+
+[node name="Collider" type="CollisionShape2D" parent="T-rex/Anim/Area2D"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_x1ele")
 
 [node name="Driving" type="Node2D" parent="."]
+visible = false
 script = ExtResource("7_yh63t")
 is_game_running = true
 
@@ -137,6 +173,7 @@ position = Vector2(0, -0.841797)
 scale = Vector2(28.785, -48)
 shape = SubResource("RectangleShape2D_gv3kb")
 
+[connection signal="area_entered" from="T-rex/Anim/Area2D" to="T-rex" method="_handle_hit"]
 [connection signal="area_entered" from="Driving/Car1/Area2D" to="Driving" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Driving/Car2/Area2D" to="Driving" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Driving/Car3/Area2D" to="Driving" method="_on_area_2d_area_entered"]
